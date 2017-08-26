@@ -1,4 +1,5 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
+# function to find whether p is a power of 2 or not.
 def isPower(p):
     if p == 1:
         return True
@@ -8,6 +9,7 @@ def isPower(p):
     else:
         return False
 
+# find the nearest power of 2 less than c.      
 def countNearest(c):
     ct = 0
     while c != 1:
@@ -15,6 +17,7 @@ def countNearest(c):
         ct = ct + 1
     return pow(2, ct)
 
+# function to handle all the operations.
 def function(f):
     count = 1
     while f != 1:
@@ -29,8 +32,10 @@ def function(f):
         return "Richard"
     else:
         return "Louise"
-    
+
+# find the number of inputs.
 n = input()
+# take user inputs for subsequent N.
 for num in range(n):
     a = input()
     final = function(a)
