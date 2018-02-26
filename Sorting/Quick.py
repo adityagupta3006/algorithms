@@ -1,3 +1,6 @@
+# It picks an element as pivot and partitions 
+# the given array around the picked pivot.
+
 array = [10, 7, 8, 9, 1, 5]
 
 def quickSort(arr, l, h):
