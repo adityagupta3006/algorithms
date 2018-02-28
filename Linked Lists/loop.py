@@ -14,4 +14,28 @@ class LinkedList:
 
 		self.head = new_node
 
+	def detectLoop(self):
+		s = set()
+		h = self.head
+		while(h):
+			if h in s:
+				return True
+
+			s.add(h)
+			h = h.next
+		return False
 	
+# Driver program for testing
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(10)
+  
+# Create a loop for testing
+llist.head.next.next.next.next = llist.head;
+ 
+if( llist.detectLoop()):
+    print ("Loop found")
+else :
+    print ("No Loop ")
