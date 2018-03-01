@@ -22,11 +22,10 @@ class LinkedList(object):
 
 		if length<n:
 			return
-		ct = 0
-		h= self.head
-		while ct != (length-n):
+		h = self.head
+
+		for i in range(length-n):
 			h = h.next
-			ct +=1 
 		return h.data
 
 llist = LinkedList()
