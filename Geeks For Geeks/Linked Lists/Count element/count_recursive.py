@@ -8,14 +8,8 @@ class LinkedList(object):
 	"""docstring for Node"""
 	def __init__(self):
 		self.head = None
-		self.frequency = 0
-
-	def push(self, new_data):
-		new_node = Node(new_data)
-		new_node.next = self.head
-		self.head = new_node
-
-	def count(self, h, n):
+		
+	def ret_count(self, h, n):
 		#print h.data
 		if h == None:
 			return self.frequency
@@ -23,9 +17,17 @@ class LinkedList(object):
 		if h.data == n:
 			self.frequency += 1
 		
-		count(h.next, n) 
+		return self.ret_count(h.next, n) 
 
-		
+	def count(self, n):
+		self.frequency = 0
+
+		return self.ret_count(self.head, n)
+
+	def push(self, new_data):
+		new_node = Node(new_data)
+		new_node.next = self.head
+		self.head = new_node
 
 # Driver program
 llist = LinkedList()
@@ -33,6 +35,9 @@ llist.push(1)
 llist.push(3)
 llist.push(1)
 llist.push(2)
-llist.push(1) 
+llist.push(1)
+
 # Check for the count function
-print llist.count(llist.head, 1)
+print (llist.count(1))
+
+print (llist.count(2))
