@@ -4,7 +4,7 @@ class Node(object):
 		self.data = data
 		self.next = None
 
-class LnkedList(object):
+class LinkedList(object):
 	"""docstring for LnkedList"""
 	def __init__(self):
 		self.head = None
@@ -15,8 +15,33 @@ class LnkedList(object):
 		self.head = new_node
 
 	def reverse(self):
-		h = self.head
-		if h is None:
+		# 1>2>3>4
+		# 4>3>2>1
+		prev = None
+		current = self.head
+		if current is None:
 			return
-		 while h:
-		 	h.next.next = 
+		while current:
+			temp = current.next
+			current.next = prev
+			prev = current
+			current = temp
+		self.head = prev
+	
+	def printList(self):
+		h = self.head
+		while(h):
+			print h.data
+			h = h.next
+
+llist = LinkedList()
+llist.push(20)
+llist.push(4)
+llist.push(15)
+llist.push(85)
+ 
+print "Given Linked List"
+llist.printList()
+llist.reverse()
+print "\nReversed Linked List"
+llist.printList()
