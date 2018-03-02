@@ -20,25 +20,23 @@ class LinkedList:
 			print head.data
 			head = head.next
 
-def merge(head1, head2):
-	
-	if head1 is None:
-		return head2
+def common(head1, head2):
+	nodeset = set()
+	while head1:
+		if head1.data in nodeset:
+			head1 = head1.next
+			continue
+		else:
+			nodeset.add(head1.data)
+			head1 = head1.next
 
-	if head2 is None:
-		return head1
+	while head2:
+		if head2.data in nodeset:
+			return head2.data
+		head2 = head2.next
 
-	temp = None
-	if(head1.data <= head2.data):
-		temp = head1
-#		head1 = head1.next
-		temp.next = merge(head1.next, head2)
-	else:
-		temp = head2
-#		head2 = head2.next
-		temp.next = merge(head1, head2.next)
-	return temp 
-		
+	return None
+
 
 # Driver Function
 if __name__ == "__main__":
@@ -57,7 +55,5 @@ if __name__ == "__main__":
 	llist2.push(0)
 
 	
-	llist3 = LinkedList() 
-	llist3.head = merge(llist1.head,llist2.head)
-	print "list 3: "
-	llist3.printList()
+	n = common(llist1.head, llist2.head)
+	print n
