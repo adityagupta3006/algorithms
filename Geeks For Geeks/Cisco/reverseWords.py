@@ -1,9 +1,9 @@
 def revString(string):
 	array = string.split('.')
 	l = len(array)
-	for i in range(l):
+	for i in range(l/2):
 		array[i], array[l-i-1] = array[l-i-1], array[i]
-		
+	print '.'.join(array)
 
 
 def parseInput(data):
