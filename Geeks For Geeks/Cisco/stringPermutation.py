@@ -1,18 +1,14 @@
 def stringPermutation(word):
-    print "word = ", word
     if len(word) == 1:
         return [word]
     char = word[0]
-    print "char = ", char 
     rest = stringPermutation(word[1:])
-    print "rest = ", rest
     result = []
 
     for i in rest:
         for l in range(len(i)+1):
             result.append(i[:l]+char+i[l:])
-            print "result = ", result
-    
+     
     return result
 
 def parseInput(data):
