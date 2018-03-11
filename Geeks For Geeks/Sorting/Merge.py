@@ -32,4 +32,3 @@ def mergeSort(arr, l, h):
         return result
 array = [90, 10, 50, 40, 70, 20]
 answer = mergeSort(array, 0, len(array)-1)
-print answer
