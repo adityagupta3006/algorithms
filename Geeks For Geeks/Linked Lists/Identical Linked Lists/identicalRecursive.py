@@ -20,7 +20,13 @@ class LinkedList(object):
 			h = h.next
 
 def identical(node1, node2):
-	
+	if node1 is None and node2 is None:
+		return True
+
+	if node1 != None and node2 != None:
+		return (node1.data == node2.data) and identical(node1.next, node2.next)
+
+	return False
 
 
 ll1 = LinkedList()
