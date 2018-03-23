@@ -22,16 +22,25 @@ class LinkedList(object):
 	def delLoop(self):
 		h = self.head
 		s = set()
+		prev = None
 		while h:
 			if h.data in s:
+				prev.next = None
 				return
 			else:
 				s.add(h.data)
-
+				prev = h
+				h = h.next
 		return
 
 ll1 = LinkedList()
 ll1.push(60)
 ll1.push(43)
-ll1.push(43)
+ll1.push(40)
+ll1.push(04)
 ll1.push(21)
+ll1.push(43)
+ll1.printList()
+ll1.delLoop()
+print '\n'
+ll1.printList()
