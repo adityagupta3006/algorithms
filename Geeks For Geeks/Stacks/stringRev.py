@@ -28,4 +28,8 @@ def rev(strin):
 
 strin = "GeeksQuiz"
 
-print rev(strin)
+#print rev(strin)
+
+a = []
+a.append((2,3))
+print a[len(a)-1][1]
