@@ -1,17 +1,19 @@
 def permutations(arr):
-	if len(arr) == 0:
+	l = len(arr)
+	if l == 0:
 		return []
 
-	if len(arr) == 1:
+	if l == 1:
 		return [arr]
-	l = []	
-	for i in range(len(arr)):
+
+	permute = []	
+	for i in range(l):
 		m = arr[i]
 		rem = arr[:i] + arr[i+1:]
 		for p in permutations(rem):
-			l.append([m]+p)
+			permute.append([m]+p)
 
-	return l
+	return permute
 data = [1,2,3]
 
 print permutations(data)
