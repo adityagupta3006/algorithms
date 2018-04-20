@@ -38,7 +38,6 @@ def createDict(d):
 			dictionary[i] = 1
 	return dictionary
 
-str1 = "palks"
-str2 = "pal"
-
-print oneAway(str1, str2)
+#print oneAway(str1, str2)
+for c1, c2 in zip(str1, str2):
+	print c1, c2

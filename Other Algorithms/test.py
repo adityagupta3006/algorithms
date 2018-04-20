@@ -1,14 +1,6 @@
-s = "babad"
-l = len(s)
-d = {}
-for i in s:
-	if i not in d:
-		d[i] = 1
-	else:
-		d[i] += 1
-if 2 not in d.values() and l > 1:
-	print "No palindrome"
+s = "adityagupta"
+s2 = "guptaaditya"
 
-result = ""
-for i in s:
-	print d[i], i
+s = sorted(s)
+s2 = sorted(s2)
+print s==s2
