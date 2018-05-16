@@ -34,4 +34,5 @@ llist.push(4)
 llist.push(15)
 llist.push(35)
 
-print llist.nLast(4)
+#print llist.nLast(4)
+
